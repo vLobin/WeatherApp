@@ -99,7 +99,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    
+    
+    //getting weather data through api
     private void getWeatherInfo(String cityName) {
         String url = "http://api.weatherapi.com/v1/forecast.json?key=05c6e92f989c44baba693618221006&q=" + cityName + "&days=1&aqi=no&alerts=no\n";
         cityNameTV.setText(cityName);
@@ -153,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    
+    //permissions
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -166,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    
+    //get current city
     private String getCityName(double longitude, double latitude) {
         String cityName = "Not Found";
         Geocoder gcd = new Geocoder(getBaseContext(), Locale.getDefault());
